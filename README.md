@@ -1,2 +1,2 @@
 # MY-FINAL-PROJECT
-Automated Manual Payments Porta
+Automated Manual Payments Portal
