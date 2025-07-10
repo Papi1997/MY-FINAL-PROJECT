@@ -1,0 +1,32 @@
+bank_payment_portal/
+│
+├── manage.py
+├── requirements.txt
+│
+├── bank_payment_portal/         ← Project settings folder
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+│
+├── payments/                    ← Your Django app
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── models.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+│
+├── templates/
+│   └── payments/
+│       ├── base.html
+│       ├── create_payment.html
+│       └── payment_list.html
+│
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   └── js/
+│       └── script.js
