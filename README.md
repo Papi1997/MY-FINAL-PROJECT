@@ -1,7 +1,7 @@
 # MY-FINAL-PROJECT
 # My Project
 
-This is a placeholder README file. Please replace this content with information about your project.
+This is a placeholder README file.
 
 ## Getting Started
 
@@ -17,7 +17,7 @@ This is a placeholder README file. Please replace this content with information 
 
 ## Usage
 
-Provide examples of how to use your project.
+Providing examples of how to use your project.
 
 ## Contributing
 
