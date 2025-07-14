@@ -39,7 +39,7 @@ MY-FINAL-PROJECT is designed to automate and streamline manual payment processes
 Contributions are welcome! Please fork the repository, make your changes, and submit a pull request.
 
 ##  Contact
-Have questions or want to connect? Reach out via [your GitHub profile](https://github.com/Papi1997).
+Have questions or want to connect? Reach out via (https://github.com/Papi1997).
 
 
 
@@ -57,3 +57,6 @@ python manage.py createsuperuser
 Run the development server: Finally, start the development server with this command:
 python manage.py runserver
 Access the website: Open your web browser and go to http://127.0.0.1:8000/ to view the website. You can access the admin panel at http://127.0.0.1:8000/admin/.
+
+Admin username:Tonny.Onwonga
+password:Tonny1997.
