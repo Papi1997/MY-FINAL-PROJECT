@@ -1,0 +1,11 @@
+{% extends 'payments/base.html' %}
+
+{% block content %}
+  <h2>Payment Details</h2>
+  <p><strong>Payee:</strong> {{ payment.payee.name }}</p>
+  <p><strong>Account Number:</strong> {{ payment.payee.account_number }}</p>
+  <p><strong>Amount:</strong> ${{ payment.amount }}</p>
+  <p><strong>Status:</strong> {{ payment.status }}</p>
+  <p><strong>Date:</strong> {{ payment.created_at }}</p>
+  <a href="{% url 'payment_list' %}" class="btn btn-secondary">Back to Payment List</a>
+{% endblock %}

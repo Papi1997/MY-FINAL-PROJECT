@@ -1,0 +1,14 @@
+{% extends 'payments/base.html' %}
+
+{% block content %}
+  <h2>Payees</h2>
+  <a href="{% url 'add_payee' %}" class="btn btn-primary mb-3">Add Payee</a>
+  <ul class="list-group">
+    {% for payee in payees %}
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        {{ payee.name }} - {{ payee.account_number }}
+        <a href="{% url 'edit_payee' payee.pk %}" class="btn btn-secondary btn-sm">Edit</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
