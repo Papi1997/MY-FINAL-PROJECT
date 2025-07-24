@@ -4,6 +4,15 @@ _Automated Manual Payments Porta_
 
 ##  Overview
 MY-FINAL-PROJECT is designed to automate and streamline manual payment processes. Built using **Python**, this project aims to provide a robust and user-friendly portal for handling payment tasks efficiently.
+This is in adherence to UN SDG 8
+ SDG 8 – Decent Work and Economic Growth
+Why it fits: Promotes sustainable economic growth, productive employment, and financial inclusion. If your system helps people save better or manage group funds, it supports entrepreneurship and long-term planning.
+
+Relevant Targets:
+
+8.3 – Promote development-oriented policies that support productive activities, decent job creation, entrepreneurship, and access to financial services.
+
+8.10 – Strengthen the capacity of financial institutions to encourage and expand access to banking, insurance, and financial services.
 
 ##  Main Features
 - Automated payment workflows
