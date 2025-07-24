@@ -1,0 +1,17 @@
+{% extends 'payments/base.html' %}
+{% block content %}
+  <h2>Payment Confirmation</h2>
+  <p>Please review the payment details below:</p>
+  <ul>
+    <li><strong>Payee:</strong> {{ payment.payee }}</li>
+    <li><strong>Amount:</strong> {{ payment.amount }} {{ payment.currency }}</li>
+  </ul>
+  <form method="post" action="{% url 'confirm_payment' %}">
+    {% csrf_token %}
+    <input type="hidden" name="payee" value="{{ payment.payee.id }}">
+    <input type="hidden" name="amount" value="{{ payment.amount }}">
+    <input type="hidden" name="currency" value="{{ payment.currency }}">
+    <button type="submit">Confirm Payment</button>
+    <a href="{% url 'create_payment' %}">Cancel</a>
+  </form>
+{% endblock %}
