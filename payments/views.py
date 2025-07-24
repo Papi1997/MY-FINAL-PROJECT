@@ -69,6 +69,9 @@ def payment_detail(request, pk):
     payment = get_object_or_404(Payment, pk=pk)
     return render(request, 'payments/payment_detail.html', {'payment': payment})
 
+from django.contrib.auth.decorators import login_required
+
+@login_required
 def confirm_payment(request):
     if request.method == 'POST':
         payee_id = request.POST['payee']
