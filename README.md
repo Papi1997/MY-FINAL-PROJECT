@@ -8,8 +8,12 @@ MY-FINAL-PROJECT is designed to automate and streamline manual payment processes
 ##  Main Features
 - Automated payment workflows
 - User-friendly interface for manual payment handling
-- Support for multiple payment methods (customize as needed)
+- Support for multiple payment methods
 - Secure and reliable transaction management
+- Currency selection for payments
+- Payment confirmation page
+- Search and filtering for payments
+- User authentication and authorization
 
 ## Technologies Used
 - **Python** (main programming language)
