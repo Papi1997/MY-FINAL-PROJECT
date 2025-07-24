@@ -24,6 +24,36 @@ Relevant Targets:
 - Search and filtering for payments
 - User authentication and authorization
 
+- MY-FINAL-PROJECT
+├── payments/             # Django app for payment & payee logic
+│   ├── migrations/
+│   ├── templates/
+│   │   └── payments/
+│   │       ├── base.html
+│   │       ├── dashboard.html
+│   │       ├── index.html
+│   │       ├── payee_form.html
+│   │       ├── payment_confirmation.html
+│   │       └── payment_form.html
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── models.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── myproject/
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── db.sqlite3
+├── manage.py
+└── README.md
+
+
 ## Technologies Used
 - **Python** (main programming language)
 - [Add any frameworks, libraries, or dependencies here]
