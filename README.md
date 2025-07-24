@@ -131,7 +131,12 @@ Create a superuser: To access the admin panel, you'll need a superuser account. 
 python manage.py createsuperuser
 Run the development server: Finally, start the development server with this command:
 python manage.py runserver
-Access the website: Open your web browser and go to http://127.0.0.1:8000/ to view the website. You can access the admin panel at http://127.0.0.1:8000/admin/.
+Access the website: Open your web browser and go to
+Home page: http://127.0.0.1:8000/
+
+Dashboard: http://127.0.0.1:8000/dashboard/
+
+Admin panel: http://127.0.0.1:8000/admin/
 
 Admin username:Tonny.Onwonga
 password:Tonny1997.
