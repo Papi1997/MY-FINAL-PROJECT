@@ -3,7 +3,9 @@
 _Automated Manual Payments Portal
 
 ##  Overview
-MY-FINAL-PROJECT is designed to automate and streamline manual payment processes. Built using **Python**, this project aims to provide a robust and user-friendly portal for handling payment tasks efficiently.
+MY-FINAL-PROJECT is designed to automate and streamline manual payment processes.my final project: a Django-based payment manager that allows users to add payees, record payments, and track totals – similar to how Chamas manage group contributions. Built using **Python**, this project aims to provide a robust and user-friendly portal for handling payment tasks efficiently.
+
+
 This is in adherence to UN SDG 8
  SDG 8 – Decent Work and Economic Growth
 Why it fits: Promotes sustainable economic growth, productive employment, and financial inclusion. If your system helps people save better or manage group funds, it supports entrepreneurship and long-term planning.
