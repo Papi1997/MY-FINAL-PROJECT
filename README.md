@@ -1,6 +1,6 @@
 # MY-FINAL-PROJECT
 
-_Automated Manual Payments Porta_
+_Automated Manual Payments Portal
 
 ##  Overview
 MY-FINAL-PROJECT is designed to automate and streamline manual payment processes. Built using **Python**, this project aims to provide a robust and user-friendly portal for handling payment tasks efficiently.
