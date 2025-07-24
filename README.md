@@ -54,6 +54,33 @@ Relevant Targets:
 └── README.md
 
 
+Clone the repo:
+
+1.How to Run Locally
+
+git clone https://github.com/Papi1997/MY-FINAL-PROJECT.git
+cd MY-FINAL-PROJECT
+
+2.Set up a virtual environment (optional but recommended):
+
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+3.Install dependencies:
+
+
+pip install django
+4. Run migrations:
+
+python manage.py migrate
+
+5.Run the server:
+python manage.py runserver
+Visit http://127.0.0.1:8000/
+
+
+
+
 ## Technologies Used
 - **Python** (main programming language)
 - [Add any frameworks, libraries, or dependencies here]
