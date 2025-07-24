@@ -40,7 +40,12 @@ MY-FINAL-PROJECT is designed to automate and streamline manual payment processes
 - Follow on-screen instructions to initiate and manage manual payments.
 
 ##  Contributing
-Contributions are welcome! Please fork the repository, make your changes, and submit a pull request.
+Contributions are welcome! Please follow these steps to contribute:
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them with a descriptive message.
+4. Push your changes to your forked repository.
+5. Submit a pull request to the main repository.
 
 ##  Contact
 Have questions or want to connect? Reach out via (https://github.com/Papi1997).
