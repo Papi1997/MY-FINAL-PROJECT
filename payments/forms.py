@@ -4,7 +4,7 @@ from .models import Payment, Payee
 class PaymentForm(forms.ModelForm):
     class Meta:
         model = Payment
-        fields = ['payee', 'amount']
+        fields = ['payee', 'amount', 'currency']
 
 class PayeeForm(forms.ModelForm):
     class Meta:

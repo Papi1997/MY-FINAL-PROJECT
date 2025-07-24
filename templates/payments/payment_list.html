@@ -1,6 +1,10 @@
 {% extends 'payments/base.html' %}
 {% block content %}
   <h2>Payment List</h2>
+  <form method="get">
+    <input type="text" name="q" placeholder="Search payments..." value="{{ request.GET.q }}">
+    <button type="submit">Search</button>
+  </form>
   <table>
     <thead>
       <tr>
@@ -15,7 +19,7 @@
       {% for payment in payments %}
       <tr>
         <td>{{ payment.payee.name }}</td>
-        <td>{{ payment.amount }}</td>
+        <td>{{ payment.amount }} {{ payment.currency }}</td>
         <td>{{ payment.status }}</td>
         <td>{{ payment.created_at }}</td>
           <td><a href="{% url 'payment_detail' payment.pk %}">View</a></td>
