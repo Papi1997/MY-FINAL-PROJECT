@@ -7,6 +7,7 @@ MY-FINAL-PROJECT is designed to automate and streamline manual payment processes
 
 
 This is in adherence to UN SDG 8
+
  SDG 8 – Decent Work and Economic Growth
 Why it fits: Promotes sustainable economic growth, productive employment, and financial inclusion. If your system helps people save better or manage group funds, it supports entrepreneurship and long-term planning.
 
