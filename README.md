@@ -62,6 +62,7 @@ Clone the repo:
 1.How to Run Locally
 
 git clone https://github.com/Papi1997/MY-FINAL-PROJECT.git
+
 cd MY-FINAL-PROJECT
 
 2.Set up a virtual environment (optional but recommended):
