@@ -12,4 +12,4 @@ class PaymentForm(forms.ModelForm):
 class PayeeForm(forms.ModelForm):
     class Meta:
         model = Payee
-        fields = ['name', 'account_number']
+        fields = ['name', 'account_number', 'email', 'phone_number', 'id_number', 'postal_address']

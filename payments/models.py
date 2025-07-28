@@ -3,6 +3,10 @@ from django.db import models
 class Payee(models.Model):
     name = models.CharField(max_length=100)
     account_number = models.CharField(max_length=20)
+    email = models.EmailField(blank=True, null=True)
+    phone_number = models.CharField(max_length=20, blank=True, null=True)
+    id_number = models.CharField(max_length=20, blank=True, null=True)
+    postal_address = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return self.name
