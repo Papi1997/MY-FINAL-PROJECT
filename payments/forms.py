@@ -4,10 +4,11 @@ from .models import Payment, Payee
 class PaymentForm(forms.ModelForm):
     class Meta:
         model = Payment
-        fields = ['payee', 'amount', 'currency', 'payment_method', 'mpesa_phone_number', 'mpesa_till_number', 'mpesa_paybill_number', 'mpesa_account_reference']
+        fields = ['payee', 'amount', 'currency', 'payment_method', 'mpesa_phone_number', 'mpesa_till_number', 'mpesa_paybill_number', 'mpesa_account_reference', 'scheduled_date']
         widgets = {
             'currency': forms.Select(choices=Payment.CURRENCY_CHOICES),
             'payment_method': forms.Select(choices=Payment.PAYMENT_METHOD_CHOICES),
+            'scheduled_date': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
         }
 
 class PayeeForm(forms.ModelForm):

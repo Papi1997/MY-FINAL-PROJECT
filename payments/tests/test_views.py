@@ -82,3 +82,20 @@ class PaymentViewsTestCase(TestCase):
         payment = Payment.objects.last()
         self.assertEqual(payment.payment_method, 'B2C')
         self.assertEqual(payment.status, 'Pending')
+
+    def test_create_scheduled_payment(self):
+        from django.utils import timezone
+        import datetime
+
+        scheduled_date = timezone.now() + datetime.timedelta(days=1)
+        response = self.client.post(reverse('create_payment'), {
+            'payee': self.payee.id,
+            'amount': '200.00',
+            'currency': 'USD',
+            'payment_method': 'Card',
+            'scheduled_date': scheduled_date.strftime('%Y-%m-%dT%H:%M'),
+        })
+        self.assertEqual(response.status_code, 302)
+        payment = Payment.objects.last()
+        self.assertEqual(payment.status, 'Scheduled')
+        self.assertEqual(payment.scheduled_date, scheduled_date.replace(second=0, microsecond=0))
