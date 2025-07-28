@@ -24,6 +24,7 @@ class Payment(models.Model):
         ('Pending', 'Pending'),
         ('Completed', 'Completed'),
         ('Failed', 'Failed'),
+        ('Scheduled', 'Scheduled'),
     ]
     CURRENCY_CHOICES = [
         ('KES', 'Kenyan Shilling'),
@@ -40,3 +41,4 @@ class Payment(models.Model):
     mpesa_paybill_number = models.CharField(max_length=20, blank=True, null=True)
     mpesa_account_reference = models.CharField(max_length=50, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    scheduled_date = models.DateTimeField(blank=True, null=True)

@@ -25,7 +25,13 @@
         <td>{{ payment.amount }}</td>
         <td>{{ payment.currency }}</td>
         <td>{{ payment.status }}</td>
-        <td>{{ payment.created_at }}</td>
+        <td>
+            {% if payment.scheduled_date %}
+                {{ payment.scheduled_date }}
+            {% else %}
+                {{ payment.created_at }}
+            {% endif %}
+        </td>
         <td><a href="{% url 'payment_detail' payment.pk %}" class="btn btn-sm btn-info">View</a></td>
       </tr>
       {% endfor %}
