@@ -6,4 +6,30 @@
     {{ form.as_p }}
     <button type="submit">Submit Payment</button>
   </form>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const paymentMethod = document.getElementById('id_payment_method');
+      const mpesaFields = [
+        document.getElementById('id_mpesa_phone_number').parentElement,
+        document.getElementById('id_mpesa_till_number').parentElement,
+        document.getElementById('id_mpesa_paybill_number').parentElement,
+        document.getElementById('id_mpesa_account_reference').parentElement,
+      ];
+
+      function toggleMpesaFields() {
+        const selectedMethod = paymentMethod.value;
+        mpesaFields.forEach(field => {
+          if (selectedMethod === 'B2C' || selectedMethod === 'LipaNaMpesaTill' || selectedMethod === 'LipaNaMpesaPaybill') {
+            field.style.display = 'block';
+          } else {
+            field.style.display = 'none';
+          }
+        });
+      }
+
+      paymentMethod.addEventListener('change', toggleMpesaFields);
+      toggleMpesaFields();
+    });
+  </script>
 {% endblock %}

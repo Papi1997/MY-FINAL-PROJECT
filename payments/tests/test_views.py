@@ -69,3 +69,16 @@ class PaymentViewsTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, '1000')
         self.assertContains(response, '5000')
+
+    def test_create_mpesa_payment(self):
+        response = self.client.post(reverse('create_payment'), {
+            'payee': self.payee.id,
+            'amount': '100.00',
+            'currency': 'KES',
+            'payment_method': 'B2C',
+            'mpesa_phone_number': '254712345678',
+        })
+        self.assertEqual(response.status_code, 302)
+        payment = Payment.objects.last()
+        self.assertEqual(payment.payment_method, 'B2C')
+        self.assertEqual(payment.status, 'Pending')
