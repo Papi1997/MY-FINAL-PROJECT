@@ -13,7 +13,9 @@
                 <strong>Email:</strong> {{ payee.email|default:"N/A" }}<br>
                 <strong>Phone Number:</strong> {{ payee.phone_number|default:"N/A" }}<br>
                 <strong>ID Number:</strong> {{ payee.id_number|default:"N/A" }}<br>
-                <strong>Postal Address:</strong> {{ payee.postal_address|default:"N/A" }}
+                <strong>Postal Address:</strong> {{ payee.postal_address|default:"N/A" }}<br>
+                <strong>Savings Balance:</strong> ${{ payee.savings_balance|default:"0.00" }}<br>
+                <strong>Loan Limit:</strong> ${{ payee.loan_limit|default:"0.00" }}
             </p>
         </div>
         <span>

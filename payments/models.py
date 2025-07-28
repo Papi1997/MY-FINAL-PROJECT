@@ -7,6 +7,8 @@ class Payee(models.Model):
     phone_number = models.CharField(max_length=20, blank=True, null=True)
     id_number = models.CharField(max_length=20, blank=True, null=True)
     postal_address = models.TextField(blank=True, null=True)
+    savings_balance = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    loan_limit = models.DecimalField(max_digits=10, decimal_places=2, default=0)
 
     def __str__(self):
         return self.name
