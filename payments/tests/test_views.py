@@ -26,12 +26,12 @@ class PaymentViewsTestCase(TestCase):
         self.assertContains(response, self.payee.name)
 
     def test_add_payee_view(self):
-        response = self.client.post(reverse('add_payee'), {'name': 'New Payee', 'account_number': '1122334455'})
+        response = self.client.post(reverse('add_payee'), {'name': 'New Payee', 'account_number': '1122334455', 'savings_balance': 0, 'loan_limit': 0})
         self.assertEqual(response.status_code, 302)
         self.assertTrue(Payee.objects.filter(name='New Payee').exists())
 
     def test_edit_payee_view(self):
-        response = self.client.post(reverse('edit_payee', args=[self.payee.pk]), {'name': 'Updated Payee', 'account_number': self.payee.account_number})
+        response = self.client.post(reverse('edit_payee', args=[self.payee.pk]), {'name': 'Updated Payee', 'account_number': self.payee.account_number, 'savings_balance': self.payee.savings_balance, 'loan_limit': self.payee.loan_limit})
         self.assertEqual(response.status_code, 302)
         self.payee.refresh_from_db()
         self.assertEqual(self.payee.name, 'Updated Payee')
@@ -60,3 +60,12 @@ class PaymentViewsTestCase(TestCase):
         self.assertEqual(response.status_code, 302)
         self.payment.refresh_from_db()
         self.assertEqual(self.payment.status, 'Completed')
+
+    def test_payee_details_display(self):
+        self.payee.savings_balance = 1000
+        self.payee.loan_limit = 5000
+        self.payee.save()
+        response = self.client.get(reverse('payee_list'))
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, '1000')
+        self.assertContains(response, '5000')
