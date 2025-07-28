@@ -1,17 +1,20 @@
 {% extends 'payments/base.html' %}
 {% block content %}
   <h2>Payment List</h2>
-  <form method="get">
-    <input type="text" name="q" placeholder="Search payments..." value="{{ request.GET.q }}">
-    <button type="submit">Search</button>
+  <form method="get" class="mb-3">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search by payee, amount, or status" value="{{ request.GET.q }}">
+      <button class="btn btn-outline-secondary" type="submit">Search</button>
+    </div>
   </form>
-  <table>
+  <table class="table">
     <thead>
       <tr>
         <th>Payee</th>
         <th>Amount</th>
+        <th>Currency</th>
         <th>Status</th>
-        <th>Created</th>
+        <th>Date</th>
         <th></th>
       </tr>
     </thead>
@@ -19,10 +22,11 @@
       {% for payment in payments %}
       <tr>
         <td>{{ payment.payee.name }}</td>
-        <td>{{ payment.amount }} {{ payment.currency }}</td>
+        <td>{{ payment.amount }}</td>
+        <td>{{ payment.currency }}</td>
         <td>{{ payment.status }}</td>
         <td>{{ payment.created_at }}</td>
-          <td><a href="{% url 'payment_detail' payment.pk %}">View</a></td>
+        <td><a href="{% url 'payment_detail' payment.pk %}" class="btn btn-sm btn-info">View</a></td>
       </tr>
       {% endfor %}
     </tbody>

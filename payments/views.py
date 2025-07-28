@@ -17,6 +17,8 @@ def create_payment(request):
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 
+from django.db.models import Q
+
 @login_required
 def payment_list(request):
     query = request.GET.get('q')

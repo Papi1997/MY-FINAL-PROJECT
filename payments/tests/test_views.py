@@ -47,3 +47,10 @@ class PaymentViewsTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'payments/payment_analytics.html')
         self.assertContains(response, 'Total Payments')
+
+    def test_search_payment(self):
+        Payment.objects.create(payee=self.payee, amount='300.00', currency='GBP', status='Completed')
+        response = self.client.get(reverse('payment_list'), {'q': 'Completed'})
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, '300.00')
+        self.assertNotContains(response, '100.00')
