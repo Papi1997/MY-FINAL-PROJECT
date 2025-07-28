@@ -12,6 +12,11 @@ class Payee(models.Model):
         return self.name
 
 class Payment(models.Model):
+    STATUS_CHOICES = [
+        ('Pending', 'Pending'),
+        ('Completed', 'Completed'),
+        ('Failed', 'Failed'),
+    ]
     CURRENCY_CHOICES = [
         ('KES', 'Kenyan Shilling'),
         ('USD', 'US Dollar'),
@@ -20,5 +25,5 @@ class Payment(models.Model):
     payee = models.ForeignKey(Payee, on_delete=models.CASCADE)
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     currency = models.CharField(max_length=3, choices=CURRENCY_CHOICES, default='KES')
-    status = models.CharField(max_length=20, default='Pending')
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='Pending')
     created_at = models.DateTimeField(auto_now_add=True)

@@ -106,3 +106,10 @@ def payment_analytics(request):
         'recent_payments': recent_payments,
     }
     return render(request, 'payments/payment_analytics.html', context)
+
+@login_required
+def update_payment_status(request, pk, status):
+    payment = get_object_or_404(Payment, pk=pk)
+    payment.status = status
+    payment.save()
+    return redirect('payment_detail', pk=payment.pk)
