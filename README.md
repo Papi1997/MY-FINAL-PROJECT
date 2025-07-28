@@ -1,9 +1,17 @@
 # MY-FINAL-PROJECT
 
-_Automated Manual Payments Portal
+_Automated Manual Payments Portal.
+
 
 ##  Overview
-MY-FINAL-PROJECT is designed to automate and streamline manual payment processes.my final project: a Django-based payment manager that allows users to add payees, record payments, and track totals – similar to how Chamas manage group contributions. Built using **Python**, this project aims to provide a robust and user-friendly portal for handling payment tasks efficiently.
+MY-FINAL-PROJECT is designed to automate and streamline manual payment processes.my final project: a Django-based payment manager that allows users to add payees, record payments, and track totals – similar to how Chamas manage group contributions. It's a tool for an administrator or a company to manage and disburse payments to a list of recipients, such as employees, contractors, or suppliers.
+
+For:
+
+Centralized Payee Management: Keeping a record of all the people or entities you need to pay.
+Payment Processing: Initiating and tracking payments to those payees.
+Financial Oversight: Providing analytics and statements to help the administrator manage the finances.
+ Built using **Python**, this project aims to provide a robust and user-friendly portal for handling payment tasks efficiently.
 
 
 This is in adherence to UN SDG 8
