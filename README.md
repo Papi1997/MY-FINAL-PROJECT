@@ -18,14 +18,14 @@ Relevant Targets:
 8.10 – Strengthen the capacity of financial institutions to encourage and expand access to banking, insurance, and financial services.
 
 ##  Main Features
-- Automated payment workflows
-- User-friendly interface for manual payment handling
-- Support for multiple payment methods
-- Secure and reliable transaction management
-- Currency selection for payments
-- Payment confirmation page
-- Search and filtering for payments
-- User authentication and authorization
+- **Multicurrency Wallets:** Support for KES, USD, and EUR, allowing users to make payments in different currencies.
+- **Payee Statements:** Generate and view detailed payment statements for each payee.
+- **Payment Analytics:** A comprehensive dashboard to track and analyze payment data, including total payments, amounts by currency, and recent transactions.
+- **Enhanced Payee Details:** Store additional information for each payee, including their email, phone number, ID number, and postal address.
+- **Automated Payment Workflows:** Streamline the payment process with automated workflows.
+- **User-Friendly Interface:** An intuitive interface for easy management of manual payments.
+- **Secure and Reliable:** Built with security in mind to ensure all transactions are managed safely.
+- **User Authentication:** Secure user authentication and authorization to protect sensitive data.
 
 - MY-FINAL-PROJECT
 ├── payments/             # Django app for payment & payee logic
