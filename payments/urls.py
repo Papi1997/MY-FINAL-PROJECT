@@ -11,4 +11,5 @@ urlpatterns = [
     path('payees/<int:pk>/statement/', views.payee_statement, name='payee_statement'),
     path('payments/<int:pk>/', views.payment_detail, name='payment_detail'),
     path('analytics/', views.payment_analytics, name='payment_analytics'),
+    path('payments/<int:pk>/update_status/<str:status>/', views.update_payment_status, name='update_payment_status'),
 ]

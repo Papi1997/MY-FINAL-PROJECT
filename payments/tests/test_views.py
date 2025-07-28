@@ -54,3 +54,9 @@ class PaymentViewsTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, '300.00')
         self.assertNotContains(response, '100.00')
+
+    def test_update_payment_status(self):
+        response = self.client.get(reverse('update_payment_status', args=[self.payment.pk, 'Completed']))
+        self.assertEqual(response.status_code, 302)
+        self.payment.refresh_from_db()
+        self.assertEqual(self.payment.status, 'Completed')
