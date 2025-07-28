@@ -1,0 +1,53 @@
+{% extends 'payments/base.html' %}
+
+{% block content %}
+  <h2>Payment Analytics</h2>
+
+  <div class="card mb-3">
+    <div class="card-header">
+      Summary
+    </div>
+    <div class="card-body">
+      <p>Total Payments: {{ total_payments }}</p>
+    </div>
+  </div>
+
+  <div class="card mb-3">
+    <div class="card-header">
+      Total Amount by Currency
+    </div>
+    <ul class="list-group list-group-flush">
+      {% for item in total_by_currency %}
+        <li class="list-group-item">{{ item.currency }}: {{ item.total }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      Recent Payments
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Payee</th>
+          <th>Amount</th>
+          <th>Currency</th>
+          <th>Status</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for payment in recent_payments %}
+          <tr>
+            <td>{{ payment.payee.name }}</td>
+            <td>{{ payment.amount }}</td>
+            <td>{{ payment.currency }}</td>
+            <td>{{ payment.status }}</td>
+            <td>{{ payment.created_at }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

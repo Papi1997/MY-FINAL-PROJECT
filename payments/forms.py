@@ -5,6 +5,9 @@ class PaymentForm(forms.ModelForm):
     class Meta:
         model = Payment
         fields = ['payee', 'amount', 'currency']
+        widgets = {
+            'currency': forms.Select(choices=Payment.CURRENCY_CHOICES),
+        }
 
 class PayeeForm(forms.ModelForm):
     class Meta:

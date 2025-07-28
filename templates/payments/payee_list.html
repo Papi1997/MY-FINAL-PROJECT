@@ -7,7 +7,10 @@
     {% for payee in payees %}
       <li class="list-group-item d-flex justify-content-between align-items-center">
         {{ payee.name }} - {{ payee.account_number }}
-        <a href="{% url 'edit_payee' payee.pk %}" class="btn btn-secondary btn-sm">Edit</a>
+        <span>
+            <a href="{% url 'edit_payee' payee.pk %}" class="btn btn-secondary btn-sm">Edit</a>
+            <a href="{% url 'payee_statement' payee.pk %}" class="btn btn-info btn-sm">Statement</a>
+        </span>
       </li>
     {% endfor %}
   </ul>

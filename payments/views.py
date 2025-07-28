@@ -38,6 +38,12 @@ def payee_list(request):
     return render(request, 'payments/payee_list.html', {'payees': payees})
 
 @login_required
+def payee_statement(request, pk):
+    payee = get_object_or_404(Payee, pk=pk)
+    payments = Payment.objects.filter(payee=payee).order_by('-created_at')
+    return render(request, 'payments/payee_statement.html', {'payee': payee, 'payments': payments})
+
+@login_required
 def add_payee(request):
     if request.method == 'POST':
         form = PayeeForm(request.POST)
@@ -83,3 +89,18 @@ def confirm_payment(request):
         )
         return redirect('payment_detail', pk=payment.pk)
     return redirect('create_payment')
+
+from django.db.models import Sum
+
+@login_required
+def payment_analytics(request):
+    total_payments = Payment.objects.count()
+    total_by_currency = Payment.objects.values('currency').annotate(total=Sum('amount'))
+    recent_payments = Payment.objects.order_by('-created_at')[:10]
+
+    context = {
+        'total_payments': total_payments,
+        'total_by_currency': total_by_currency,
+        'recent_payments': recent_payments,
+    }
+    return render(request, 'payments/payment_analytics.html', context)
